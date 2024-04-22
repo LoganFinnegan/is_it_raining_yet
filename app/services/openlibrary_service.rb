@@ -1,8 +1,10 @@
 class OpenlibraryService					
-  def self.call_db(url, params = {})		
+  def self.call_db(url, params = {})	
+  	# require 'pry'; binding.pry
     response = connection.get(url) do |request| 		
       request.params = params		
     end		
+    require 'pry'; binding.pry
     JSON.parse(response.body, symbolize_names: true)		
   end		
       
