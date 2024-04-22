@@ -10,10 +10,9 @@ RSpec.describe 'retrive weather for city', type: :request do
       get '/api/v0/forecast', headers: headers, params: forecast_params
       
       expect(response).to be_successful
-      expect(response.content_type).to eq('application/json')
+      expect(response.content_type).to eq('application/json; charset=utf-8')
       expect(response.status).to eq(200)
       expect(response.body).to be_a String
-      require 'pry'; binding.pry
     end
   end
 end
